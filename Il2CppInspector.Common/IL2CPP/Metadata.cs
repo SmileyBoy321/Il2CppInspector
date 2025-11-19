@@ -171,11 +171,11 @@ namespace Il2CppInspector
             if (Version >= 19) {
                 FieldRefs = ReadArray<Il2CppFieldRef>(Header.fieldRefsOffset, Header.fieldRefsCount / Sizeof(typeof(Il2CppFieldRef)));
             }
-            if (Version >= 21 && Version < 29) {
+            if (Version >= 21 && Version < 31) {
                 AttributeTypeIndices = ReadArray<int>(Header.attributeTypesOffset, Header.attributeTypesCount / sizeof(int));
                 AttributeTypeRanges = ReadArray<Il2CppCustomAttributeTypeRange>(Header.attributesInfoOffset, Header.attributesInfoCount / Sizeof(typeof(Il2CppCustomAttributeTypeRange)));
             }
-            if (Version >= 29) {
+            if (Version >= 31) {
                 AttributeDataRanges = ReadArray<Il2CppCustomAttributeDataRange>(Header.attributeDataRangeOffset, Header.attributeDataRangeCount / Sizeof(typeof(Il2CppCustomAttributeDataRange)));
             }
 
