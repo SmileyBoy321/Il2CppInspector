@@ -318,7 +318,7 @@ namespace Il2CppInspector
             FunctionAddresses.Add(sortedFunctionPointers[^1], sortedFunctionPointers[^1]);
 
             // Organize custom attribute indices
-            if (Version >= 24.1 && Version < 29) {
+            if (Version >= 24.1 && Version < 31) {
                 AttributeIndicesByToken = new Dictionary<int, Dictionary<uint, int>>();
                 foreach (var image in Images) {
                     var attsByToken = new Dictionary<uint, int>();
