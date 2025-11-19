@@ -103,14 +103,14 @@ namespace Il2CppInspector
                     break;
                 case Il2CppTypeEnum.IL2CPP_TYPE_U4:
                     //V29 uses the new compressed uint format
-                    if (Metadata.Version >= 29)
+                    if (Metadata.Version >= 31)
                         value = Metadata.ReadUnityCompressedUInt(out _);
                     else
                         value = Metadata.ReadUInt32();
                     break;
                 case Il2CppTypeEnum.IL2CPP_TYPE_I4:
                     //V29 uses the new compressed int format
-                    if (Metadata.Version >= 29)
+                    if (Metadata.Version >= 31)
                         value = Metadata.ReadUnityCompressedInt(out _);
                     else
                         value = Metadata.ReadInt32();
@@ -129,8 +129,8 @@ namespace Il2CppInspector
                     break;
                 case Il2CppTypeEnum.IL2CPP_TYPE_STRING:
                     int uiLen;
-                    if (Metadata.Version >= 29)
-                        //As of v29 string length is compressed
+                    if (Metadata.Version >= 31)
+                        //As of v31 string length is compressed
                         uiLen = Metadata.ReadUnityCompressedInt(out _);
                     else
                         uiLen = Metadata.ReadInt32();
